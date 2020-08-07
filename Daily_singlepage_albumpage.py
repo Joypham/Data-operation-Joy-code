@@ -60,7 +60,7 @@ def get_df():
     check_fistrow = data[1]
     x = len(column) - len(check_fistrow)
     k = [None] * x
-    check_fistrow.extend(k)                             # if only have column name but all data of column is null =>> error
+    check_fistrow.extend(k)                             # if only have column name but all data of column null =>> error
     row = data[2:]
     row.insert(0, check_fistrow)
     df = pd.DataFrame(row, columns=column)
@@ -371,10 +371,10 @@ if __name__ == "__main__":
     start_time = time.time()
 
 # INPUT HERE
-#     SPREADSHEET_ID = '1oHRIrg2msFwNYcNIMA29fMmiGSq1byw6ZKd9BLnLD3k'     # single page
-#     SHEET_NAME = 'wiki'
+    SPREADSHEET_ID = '1uhp3BKGJwR1eRSVx-j1iF3BBu03zei87tW2w9EHBkSk'     #  albumpage
+    SHEET_NAME = '03.08.2020'
 
-    'https://docs.google.com/spreadsheets/d/1uhp3BKGJwR1eRSVx-j1iF3BBu03zei87tW2w9EHBkSk/edit#gid=537332559'
+
 
 # CHOOSE A FUNCTION TO RUN
 
@@ -383,7 +383,7 @@ if __name__ == "__main__":
 # GET INFO
 #     final_process_get_track_info()
 #     final_process_get_track_lyrics()
-#     final_process_get_album_info()
+    final_process_get_album_info()
 # Crawl artist_image
 #     crawl_artistimage_albumpage()
 #     crawl_artistimage_singlepage()
@@ -395,3 +395,6 @@ if __name__ == "__main__":
 #      final_update_wiki_albumpage()
 
 print("--- %s seconds ---" % (time.time() - start_time))
+
+
+
