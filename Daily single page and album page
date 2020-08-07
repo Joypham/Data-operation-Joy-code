@@ -60,7 +60,7 @@ def get_df():
     check_fistrow = data[1]
     x = len(column) - len(check_fistrow)
     k = [None] * x
-    check_fistrow.extend(k)
+    check_fistrow.extend(k)                             # if only have column name but all data of column is null =>> error
     row = data[2:]
     row.insert(0, check_fistrow)
     df = pd.DataFrame(row, columns=column)
@@ -369,16 +369,17 @@ def final_update_wiki_albumpage():
 
 if __name__ == "__main__":
     start_time = time.time()
+
 # INPUT HERE
-#     SPREADSHEET_ID = '1wSi7jXFbij8bx1HNt9E2w1IfcKrT2tlnTbtI8xiyXsQ'     # single page
-    # SPREADSHEET_ID = '1svChlCQQmYAZU8Ya6QGggDUA10-t5ZLU02FP3BhPXjQ'     # album page
-    # SHEET_NAME = '27.07.2020'
-    SHEET_NAME = 'wiki'
+#     SPREADSHEET_ID = '1oHRIrg2msFwNYcNIMA29fMmiGSq1byw6ZKd9BLnLD3k'     # single page
+#     SHEET_NAME = 'wiki'
+
+    'https://docs.google.com/spreadsheets/d/1uhp3BKGJwR1eRSVx-j1iF3BBu03zei87tW2w9EHBkSk/edit#gid=537332559'
 
 # CHOOSE A FUNCTION TO RUN
 
     print("Select tool to run...")
-    final_update_wiki_albumpage()
+
 # GET INFO
 #     final_process_get_track_info()
 #     final_process_get_track_lyrics()
@@ -390,10 +391,7 @@ if __name__ == "__main__":
 #     final_process_get_artistimage_cant_upload_albumpage_result()
 #     final_process_get_artistimage_cant_upload_singlepage_result()
 # Update wiki
-#     final_update_wiki_singlepage()
+#      final_update_wiki_singlepage()
 #      final_update_wiki_albumpage()
 
 print("--- %s seconds ---" % (time.time() - start_time))
-
-
-
